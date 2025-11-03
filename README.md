@@ -65,3 +65,51 @@ Esses sensores geram dados a intervalos de tempo configuráveis, salvam as medi�
 | **Bruno de Castilhos Gomes Rego** | Simulação dos Sensores | Desenvolvimento do módulo `sensores.py`, responsável pela geração dos dados simulados. |
 | **Allan Ronald Vasconcelos** | Armazenamento e persistência de dados | Criação do módulo `armazenamento.py`, incluindo lógica de gravação CSV e cabeçalho automático. |
 | **Thyalles de Campos Araújo** | Visualização e Interface | Implementação do módulo `graficos.py`, que lê o CSV e exibe os gráficos de temperatura e umidade. |
+
+***
+
+## 🧪 6. Testes Automatizados
+
+O projeto conta com uma suíte de *testes unitários automatizados* desenvolvida com o framework *Pytest*.  
+Esses testes garantem o funcionamento correto de todos os módulos do sistema: geração de dados, armazenamento e exibição dos gráficos.
+
+### Estrutura dos Testes
+tests/
+│
+├── test_sensores.py        # Testes do módulo de simulação dos sensores
+├── test_armazenamento.py   # Testes do módulo de gravação de dados CSV
+└── test_graficos.py        # Testes do módulo de visualização de gráficos
+
+### O que é verificado
+
+| *Arquivo* | *Objetivo do Teste* | *O que é Validado* |
+|--------------|----------------------|-----------------------|
+| test_sensores.py | Validação das medições simuladas | Formato de hora, presença dos campos esperados e valores numéricos dentro de faixas aceitáveis |
+| test_armazenamento.py | Teste de persistência de dados | Criação automática do arquivo CSV, escrita correta do cabeçalho e registro das leituras |
+| test_graficos.py | Teste de exibição gráfica | Geração de gráficos sem erros, leitura adequada do CSV e compatibilidade com ambientes sem interface gráfica |
+
+### 🧩 Execução dos Testes
+
+Para executar todos os testes, basta rodar o comando abaixo no terminal, dentro do ambiente virtual:
+
+bash
+pytest -v
+
+
+### Dependências Necessárias
+bash 
+pip install pytest pandas matplotlib
+
+
+### Resultado Esperado
+bash 
+========================= test session starts =========================
+collected 5 items
+
+tests/test_armazenamento.py::test_salvar_csv_cria_arquivo PASSED
+tests/test_graficos.py::test_exibir_grafico_roda_sem_erro PASSED
+tests/test_sensores.py::test_gerar_dado_sensor_retorna_dict PASSED
+tests/test_sensores.py::test_gerar_dado_sensor_campos_presentes PASSED
+tests/test_sensores.py::test_gerar_dado_sensor_valores_validos PASSED
+
+========================= 5 passed in 1.02s ===========================
