@@ -65,4 +65,50 @@ O sistema permite monitorar, de forma simulada, as variações de temperatura e 
 |  Allan Ronald Vasconcelos |  Armazenamento e peristência de dados |  Criação do módulo `armazenamento.py`, incluindo lógica de gravação CSV e cabeçalho automático.  |
 |  Thyalles de Campos Araujo |  Visualização e Interface | Implementação do módulo `graficos.py`, que lê o CSV e exibe os gráficos de temperatura e umidade. |
 
+## 🧪 6. Testes Automatizados
+
+O projeto conta com uma suíte de *testes unitários automatizados* desenvolvida com o framework *Pytest*.  
+Esses testes garantem o funcionamento correto de todos os módulos do sistema: geração de dados, armazenamento e exibição dos gráficos.
+
+### Estrutura dos Testes
+tests/
+│
+├── test_sensores.py        # Testes do módulo de simulação dos sensores
+├── test_armazenamento.py   # Testes do módulo de gravação de dados CSV
+└── test_graficos.py        # Testes do módulo de visualização de gráficos
+
+### O que é verificado
+
+| *Arquivo* | *Objetivo do Teste* | *O que é Validado* |
+|--------------|----------------------|-----------------------|
+| test_sensores.py | Validação das medições simuladas | Formato de hora, presença dos campos esperados e valores numéricos dentro de faixas aceitáveis |
+| test_armazenamento.py | Teste de persistência de dados | Criação automática do arquivo CSV, escrita correta do cabeçalho e registro das leituras |
+| test_graficos.py | Teste de exibição gráfica | Geração de gráficos sem erros, leitura adequada do CSV e compatibilidade com ambientes sem interface gráfica |
+
+### 🧩 Execução dos Testes
+
+Para executar todos os testes, basta rodar o comando abaixo no terminal, dentro do ambiente virtual:
+
+bash
+pytest -v
+
+
+### Dependências Necessárias
+bash 
+pip install pytest pandas matplotlib
+
+
+### Resultado Esperado
+bash 
+========================= test session starts =========================
+collected 5 items
+
+tests/test_armazenamento.py::test_salvar_csv_cria_arquivo PASSED
+tests/test_graficos.py::test_exibir_grafico_roda_sem_erro PASSED
+tests/test_sensores.py::test_gerar_dado_sensor_retorna_dict PASSED
+tests/test_sensores.py::test_gerar_dado_sensor_campos_presentes PASSED
+tests/test_sensores.py::test_gerar_dado_sensor_valores_validos PASSED
+
+========================= 5 passed in 1.02s ===========================
+
 [image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAABNCAYAAADThfiRAAAGbUlEQVR4Xu2dbahlYxTHr8HUREORyGCENBnyXkpqJO+SkZfERTSEovFSI9JI4sNI5oPXlBpKIcZXMh+MMYphUoNRbqShwaQpnmEM/3X289xZ53/W3vt59t5nzr3X86t/c/de/7We9azrXPecs8++Y2Mjwo0f+Ai0AfrXa4I9TZA6quZn0DL2zAiwsWOhH9VmtXZBq6FDOK8rUPsg6DljbZH0NY9zpiRodG/oJWMTWgdzngbxm6Gdyr+DPRqq/Td0LXsYeNYYfQU9C+3FOSMBjYwbDfaJczSIryX/x+xJAfnrqd677NG4/m+kpcs5Z+hg0XuNRlgvcl4Asd/I+yV72oB631H9rewJILbI6J21hPM6BQvMNha19AHnBgyvqNPBBlD3B2Ot0kcSYo+z1xLntcLFfWdrF2ZvbF5TeI3Y9dhbobM5NwkU+MYoaopzGfaTdrG/DUb9LnvV2si5tSDpNqNQlZ7nGhrEFxs5ZfoTegban+tYiM/7dxi1ylT5PyrEXzVyqnQD1zAxEmvFNSw4Z5Ti3iw4J0Zcow82x4rrWMB3KueNSIdxbxZGXpS4Tg82pYhrlQHvVZy7h3UZ91SGkRstLrSSDanqK1gD/Idy/pCV9BTbyE/Vk10W60n1l4RL+K0kUpt5jViMWo0Uij3NgbaifhuDWjdCK6A3XPEKV5Acy/na1xJiccULSQN7aaHHOvtOGXqZNzAVQZ9vGb13omEOV2sVb2qUoJ83jR47154aLmsTdBxvehhgnQXQZqOHoWtUw7W0BVoOzYP24yFVIX6fJ/k/GbVHImnsJj6Z1YkWhe88B7JaSj+szuVgVistnByuHzAbshqqb7ABBP5hY1aSfueZ9gHDh0ZSVr0q3wydBMYDjOSscs3hGdZiFMki8cyS4YJZHQyVccVVLQML/Y+0nWfSOW7woouZrsavD7fCzdzfLtbyXkeKK1484Sank5LeDho5aHipsYmpoKXc64wAG7sP+tbY8DAk69zFPWQymUwmk8lkMpnM1ISf1XA8lWHXg+ayJwXkn8M12ZOKWQ9fbNPFfTDq6msLV3wKUmo8AB3VRfPUn1wKNUvHU9E94d9T/PFs9sWC3Aupx6K+/6Kzz8D6eivU8Sq9cBPa5jNcz/f8uT6Xgis+ifmpOpbr04Y2XPnQ8sVevQ9Wsy8FX7P/IdcCX2e7Ky66/tofb2BfLG73tb1Sr/eTALpyWMMVyTUQQTvZ1wRXXHD3h9TnWAq+P/k0+x1eXQxX3gKTWuFi8gfDQodzQlN8vcV8vktkDT6XAud3NNyP1PEnvTV8Yf5hfEE4TsWo1/u8g/akgNxjqF7vvzTtSYXzfc9dDrf3jkw4CA/lvsGUAc8JfE7D9aCj2aNBfBOf0yC+jupVXoSB+BY+p+E9+ppf6HMaV/MxVJ8/eTsDfH0Er9EpKH419BCfz2QymUwmk8lkMplWqGddqzk2HUDf74c9cGzkqOG+w7HpAPp+Lw93SOThDpHo4cKwD3QndCu0L8djQN6Z0AvQFRyz4OHi31mu3ftZsge5L9qy1D3Af7qruAelhasbLgIb1SZZP7PfwsibFHs1ymfeEZT9ZcB7EucqVe6B/RyvwkUMl5sZEOdo2GuJcwLss8Q5jIu7u9QrnCcYvtr1NK5quKroGiN2t4+t51jAFTf0DTVWUuz80oU9Klf0ujo/R53/S+cwuoYRe60sTmsv0LFYXORwl3MsBpVvvg/nau6krDdoxCZvVcCxQFV+ALFb2MfHTXE1w52vF/K6hH0W8M0tLRyJWnOCY0JdfZU/n2MaxK+nPVbWjcVVDVdw5ffU+p69GjeFhsvnLeC7R++P4xbwHen9v3BMcHXDDcCwUC+udDx7BTf9hsv7qs2D54kqr4sdLhPTRF28DrXGBMeEuvoxPQraB13TIO8MjgmubrjO+E1BcLsfEnbiWP3mfKz0ihuVP8Exoaq2IL1HeAZ6dBE/InD+0qq44KpeuNELQF+54hmOPEu6v27xANV41BV/M+I6On8y5wkq/jbHhAbr/wqd6Iob2G/VMSNvCeVK75IXrtQMKr1EALGzlO80V+x98qI8bm5AqlYpnEO6iP0B5TFfW4jtwRVD5XVr9+D6h2PpYc5hjBzROJv0H7HY1heMwA3+Wld7R3rlfYpjQojz+TJc/x/2WMfxMnzvcuWj5MlFdeexpwr4b1fr9p50/QdGSMzQv6L3MgAAAABJRU5ErkJggg==>
