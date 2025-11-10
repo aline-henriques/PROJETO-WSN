@@ -167,6 +167,37 @@ tests/test_sensores.py::test_gerar_dado_sensor_valores_validos PASSED
 
 ---
 
+Aqui está o trecho formatado em **Markdown**, pronto para inserir no seu `README.md`:
+
+---
+
+## 9. 🧩 Resultados e Conclusão
+
+O **Projeto WSN** demonstra o funcionamento de uma **rede de sensores simulada**, integrando:
+
+* 📡 **Coleta e armazenamento de dados**
+* 📊 **Processamento e visualização gráfica**
+* 💻 **Interface interativa simples e funcional**
+
+O sistema está **100% funcional, documentado e pronto para apresentação**, representando uma integração prática entre **programação, redes de computadores e análise de dados**.
+
+---
+
+## 10. 📄 Documentação Final e Apresentação
+
+### 📘 **Entrega Final**
+
+* ✅ Código totalmente funcional e documentado
+* ✅ Testes unitários e integrados executados com sucesso
+* ✅ README e manual de uso finalizados
+* ✅ Roteiro de apresentação concluído no Canva
+
+### 🎨 **Apresentação no Canva**
+
+👉 [Clique aqui para visualizar a apresentação](https://www.canva.com/design/DAG4VvbkseQ/M_CyhvUUxop1mFO4Xciuhw/edit)
+
+---
+
 ## 📄 Licença
 
 Projeto acadêmico desenvolvido para fins **educacionais** na disciplina
