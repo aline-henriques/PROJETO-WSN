@@ -5,10 +5,6 @@ from armazenamento import salvar_csv
 from graficos import exibir_grafico
 
 def test_fluxo_completo(tmp_path):
-    """
-    Teste de grupo que valida o fluxo completo:
-    geração -> armazenamento -> leitura -> exibição.
-    """
     # Caminho temporário do arquivo CSV
     arquivo = tmp_path / "leituras.csv"
 
@@ -45,4 +41,5 @@ def test_dados_consistentes():
     umids = [l["umidade"] for l in leituras]
 
     assert min(temps) >= 10 and max(temps) <= 45, "Temperaturas fora do intervalo esperado"
+
     assert min(umids) >= 0 and max(umids) <= 100, "Umidades fora do intervalo esperado"
