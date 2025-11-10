@@ -2,105 +2,69 @@
 
 **Disciplina:** Infraestrutura de Comunicação – Redes de Computadores  
 **Local:** Recife – 2025  
+**Equipe:** Aline Henriques, Allan Ronald, Bruno Castilho, Thyalles Araujo  
 
 ---
 
-## 1. Tema do Projeto
+## 🗓️ Semana 1 (27/10/2025) – Planejamento e Configuração
 
+### Objetivo
+Definição da solução, divisão de tarefas, pesquisa de bibliotecas Python e configuração do ambiente de desenvolvimento.
+
+### Tema
 **Redes de Sensores (Wireless Sensor Networks - WSN)**  
 
 Desenvolvimento de uma aplicação Python que simula a coleta, o armazenamento e a visualização de dados de sensores (como temperatura e umidade) em uma rede de sensores sem fio simulada.  
 O objetivo é compreender o funcionamento básico da comunicação entre nós sensores e o processamento dos dados coletados.
 
----
-
-## 2. Escopo do Projeto
-
-O sistema permite monitorar, de forma **simulada**, as variações de **temperatura** e **umidade** em uma rede de sensores virtuais.  
-Esses sensores geram dados a intervalos de tempo configuráveis, salvam as medições em um arquivo `.csv` e, ao final, exibem um gráfico representando a evolução dos valores coletados.
-
-
-### **Funcionalidades previstas**
-- 🔹 Simulação de sensores virtuais de temperatura e umidade  
-- 🔹 Geração automática de dados em intervalos regulares  
-- 🔹 Armazenamento das leituras em arquivo CSV com cabeçalho  
-- 🔹 Leitura e análise dos dados utilizando `pandas`  
-- 🔹 Exibição gráfica (linha do tempo x valores) usando `matplotlib`  
-- 🔹 Finalização automática da coleta com geração do gráfico consolidado  
+### Marco e Entrega
+- Documento de planejamento inicial (Tema, Escopo, Tecnologias, Divisão de Tarefas).  
+- Ambiente Python configurado e código inicial (esqueleto) pronto para a funcionalidade principal.
 
 ---
 
-## 3. Tecnologias e Bibliotecas
+## 🧩 Semana 2 (03/11/2025) – Desenvolvimento Básico
 
-| **Componente** | **Biblioteca / Tecnologia** | **Justificativa e Descrição** |
-|----------------|-----------------------------|--------------------------------|
-| Linguagem de Programação | **Python 3.11** | Escolhida por ser moderna, multiplataforma e amplamente utilizada em simulações e tratamento de dados. |
-| Simulação de Dados | **random**, **time** | Geram medições aleatórias de temperatura e umidade em intervalos definidos. |
-| Armazenamento | **csv** (nativo do Python) | Permite salvar dados em formato tabular simples, de fácil leitura e importação. |
-| Processamento de Dados | **pandas** | Facilita leitura, estruturação e manipulação de dados armazenados em CSV. |
-| Visualização Gráfica | **matplotlib.pyplot** | Cria gráficos de linha para exibir a variação das medições coletadas. |
-| Estrutura e Organização | **pathlib**, **os** | Garantem a criação automática de diretórios e acesso seguro a arquivos. |
+### Objetivo
+Implementação da funcionalidade central do projeto (parte mais básica da rede) e testes unitários iniciais.
 
----
+### Descrição
+Durante a segunda semana, a equipe implementou a **funcionalidade principal**, criando o protótipo funcional da rede de sensores.  
+Foram desenvolvidos os módulos principais (`sensores.py`, `armazenamento.py`, `graficos.py`) e realizados os **testes automatizados** com *Pytest*.
 
-## 4. Estrutura Inicial do Código
+### Marco e Entrega
+- ✅ Funcionalidade de rede principal implementada e testada  
+- ✅ Protótipo funcional rodando em linha de comando  
+- ✅ Testes unitários executados com sucesso  
 
+### ▶️ Comandos
 ```bash
-/projeto_wsn/
-│
-├── main.py              # Script principal
-├── sensores.py          # Simulação dos sensores
-├── armazenamento.py     # Funções para salvar e ler dados
-├── graficos.py          # Funções de exibição dos gráficos
-├── dados/leituras.csv   # Base de dados gerada
-└── README.md            # Documentação do projeto
+python main.py     # Executar o programa
+pytest -v          # Rodar os testes
 ````
 
 ---
 
-## 5. Divisão de Tarefas por Integrante
+## 🧠 Semana 3 (10/11/2025) – Refinamento e Interface
 
+### Objetivo
 
-| **Integrante**                     | **Responsabilidade**                  | **Descrição**                                                                                               |
-| ---------------------------------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **Aline de Albuquerque Henriques** | Coordenação, documentação e testes    | Organização do projeto, estruturação do relatório, criação do README e testes de funcionalidade no Windows. |
-| **Bruno de Castilhos Gomes Rego**  | Simulação dos Sensores                | Desenvolvimento do módulo `sensores.py`, responsável pela geração dos dados simulados.                      |
-| **Allan Ronald Vasconcelos**       | Armazenamento e persistência de dados | Criação do módulo `armazenamento.py`, incluindo lógica de gravação CSV e cabeçalho automático.              |
-| **Thyalles de Campos Araújo**      | Visualização e Interface              | Implementação do módulo `graficos.py`, que lê o CSV e exibe os gráficos de temperatura e umidade.           |
+Adicionar funcionalidades secundárias, tratamento de erros e desenvolver uma interface simples (terminal).
 
----
+### Descrição
 
-## 6. Semana 2 – Desenvolvimento Básico
+Na terceira semana, o foco foi o **refinamento do sistema** e a **criação de um menu interativo**.
+O código passou a permitir que o usuário escolha ações no terminal e visualize estatísticas consolidadas das leituras.
 
-Durante a segunda semana, a equipe implementou a **funcionalidade central do projeto**, criando o protótipo funcional da rede de sensores.
-Foram desenvolvidos os módulos principais (`sensores.py`, `armazenamento.py`, `graficos.py`) e realizados os **testes unitários iniciais** com *Pytest*.
+### Novas Funcionalidades
 
-### **Marco da Semana 2**
+* Menu interativo no terminal
+* Intervalo de coleta configurável pelo usuário
+* Exibição de estatísticas (média, mínima e máxima)
+* Tratamento de erros e mensagens informativas
+* Estrutura modular e aprimorada
 
-* ✅ Funcionalidade principal de coleta e armazenamento concluída
-* ✅ Protótipo funcional rodando em linha de comando
-* ✅ Testes unitários criados e executados com sucesso
-
-### **Comando de Execução**
-
-```bash
-python main.py
-```
-
-### **Comando de Testes**
-
-```bash
-pytest -v
-```
-
----
-
-## 7. Semana 3 – Refinamento e Interface
-
-Na terceira semana, o foco foi o **refinamento do sistema**, o tratamento de erros e a criação de uma **interface simples no terminal**.
-O código foi aprimorado para incluir um menu interativo e a exibição de **estatísticas das leituras** (média, mínima e máxima de temperatura e umidade).
-
-### **Menu Principal**
+### 🖥️ Menu Principal
 
 ```
 === 🌡️ PROJETO WSN - MENU PRINCIPAL ===
@@ -111,16 +75,7 @@ O código foi aprimorado para incluir um menu interativo e a exibição de **est
 Escolha uma opção:
 ```
 
-### **Novas Funcionalidades da Semana 3**
-
-* 🧭 Menu interativo no terminal
-* ⚙️ Intervalo de coleta configurável pelo usuário
-* 📊 Exibição de estatísticas das leituras (média, mínima e máxima)
-* 🧩 Tratamento de erros e mensagens informativas
-* 💾 Estrutura de dados aprimorada e código modular
-
-
-### **Marco da Semana 3**
+### Marco e Entrega
 
 * ✅ Projeto funcionalmente completo e utilizável
 * ✅ Interface simples implementada
@@ -128,37 +83,77 @@ Escolha uma opção:
 
 ---
 
-## 🧪 8. Testes Automatizados
+## ⚙️ Tecnologias Utilizadas
 
-O projeto conta com uma suíte de *testes unitários automatizados* desenvolvida com o framework *Pytest*.
-Esses testes garantem o funcionamento correto de todos os módulos do sistema: geração de dados, armazenamento e exibição dos gráficos.
+| **Componente**           | **Biblioteca / Tecnologia** | **Justificativa e Descrição**                                               |
+| ------------------------ | --------------------------- | --------------------------------------------------------------------------- |
+| Linguagem de Programação | **Python 3.11**             | Moderna, multiplataforma e amplamente usada para simulações.                |
+| Simulação de Dados       | **random**, **time**        | Geram medições aleatórias de temperatura e umidade em intervalos definidos. |
+| Armazenamento            | **csv** (nativo)            | Salva dados em formato tabular simples e legível.                           |
+| Processamento de Dados   | **pandas**                  | Estrutura e manipula os dados armazenados em CSV.                           |
+| Visualização Gráfica     | **matplotlib.pyplot**       | Gera gráficos de linha com as medições coletadas.                           |
+| Organização              | **pathlib**, **os**         | Criação de diretórios e acesso seguro aos arquivos.                         |
 
+---
 
-### Estrutura dos Testes
+## 🧱 Estrutura do Projeto
+
+```bash
+/projeto_wsn/
+│
+├── main.py              # Script principal (menu e controle)
+├── sensores.py          # Simulação dos sensores
+├── armazenamento.py     # Funções para salvar e ler dados
+├── graficos.py          # Exibição de gráficos
+├── dados/leituras.csv   # Base de dados gerada
+├── tests/               # Testes automatizados
+│   ├── test_sensores.py
+│   ├── test_armazenamento.py
+│   └── test_graficos.py
+└── README.md            # Documentação do projeto
+```
+
+---
+
+## 👥 Divisão de Tarefas por Integrante
+
+| **Integrante**                     | **Responsabilidade**                  | **Descrição**                                                                                     |
+| ---------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Aline de Albuquerque Henriques** | Coordenação, documentação e testes    | Organização do projeto, estruturação do relatório, criação do README e testes no Windows.         |
+| **Bruno de Castilhos Gomes Rego**  | Simulação dos Sensores                | Desenvolvimento do módulo `sensores.py`, responsável pela geração dos dados simulados.            |
+| **Allan Ronald Vasconcelos**       | Armazenamento e persistência de dados | Criação do módulo `armazenamento.py`, incluindo lógica de gravação CSV e cabeçalho automático.    |
+| **Thyalles de Campos Araújo**      | Visualização e Interface              | Implementação do módulo `graficos.py`, que lê o CSV e exibe os gráficos de temperatura e umidade. |
+
+---
+
+## 🧪 Testes Automatizados
+
+O projeto inclui uma suíte de *testes unitários* utilizando o framework **Pytest**.
+
+### Estrutura
 
 ```
 tests/
-│
-├── test_sensores.py        # Testes do módulo de simulação dos sensores
-├── test_armazenamento.py   # Testes do módulo de gravação de dados CSV
-└── test_graficos.py        # Testes do módulo de visualização de gráficos
+├── test_sensores.py
+├── test_armazenamento.py
+└── test_graficos.py
 ```
 
-### O que é verificado
+### O que é testado
 
-| *Arquivo*               | *Objetivo do Teste*              | *O que é Validado*                                                                                           |
-| ----------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `test_sensores.py`      | Validação das medições simuladas | Formato de hora, presença dos campos esperados e valores numéricos dentro de faixas aceitáveis               |
-| `test_armazenamento.py` | Teste de persistência de dados   | Criação automática do arquivo CSV, escrita correta do cabeçalho e registro das leituras                      |
-| `test_graficos.py`      | Teste de exibição gráfica        | Geração de gráficos sem erros, leitura adequada do CSV e compatibilidade com ambientes sem interface gráfica |
+| **Arquivo**             | **Objetivo**                | **Validação**                                          |
+| ----------------------- | --------------------------- | ------------------------------------------------------ |
+| `test_sensores.py`      | Testa geração de dados      | Verifica campos e valores dentro dos limites esperados |
+| `test_armazenamento.py` | Testa persistência de dados | Confirma criação do CSV e escrita correta              |
+| `test_graficos.py`      | Testa exibição de gráficos  | Garante leitura e renderização sem erros               |
 
-### Execução dos Testes
+### Execução
 
 ```bash
 pytest -v
 ```
 
-### Dependências Necessárias
+### Dependências
 
 ```bash
 pip install pytest pandas matplotlib
@@ -181,7 +176,7 @@ tests/test_sensores.py::test_gerar_dado_sensor_valores_validos PASSED
 
 ---
 
-## 📄 9. Licença
+## 📄 Licença
 
 Projeto acadêmico desenvolvido para fins **educacionais** na disciplina
 **Infraestrutura de Comunicação – CESAR School (2025)**.
