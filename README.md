@@ -40,7 +40,6 @@ Foram desenvolvidos os módulos principais (`sensores.py`, `armazenamento.py`, `
 ### ▶️ Comandos
 python main.py     # Executar o programa
 pytest -v          # Rodar os testes
-````
 
 ---
 
@@ -109,7 +108,6 @@ PROJETO-WSN/
 ├── main.py                      # Ponto de entrada e orquestração do projeto
 ├── sensores.py                  # Lógica para simular a geração de dados
 └── README.md                    # Este arquivo
-```
 
 ---
 
@@ -149,16 +147,13 @@ tests/
 ### Execução
 
 pytest -v
-```
 
 ### Dependências
 
 pip install pytest pandas matplotlib
-```
 
 ### Resultado Esperado
 
-```
 ========================= test session starts =========================
 collected 5 items
 
@@ -169,7 +164,6 @@ tests/test_sensores.py::test_gerar_dado_sensor_campos_presentes PASSED
 tests/test_sensores.py::test_gerar_dado_sensor_valores_validos PASSED
 
 ========================= 5 passed in 1.02s ===========================
-```
 
 ---
 
