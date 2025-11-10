@@ -38,7 +38,6 @@ Foram desenvolvidos os módulos principais (`sensores.py`, `armazenamento.py`, `
 - ✅ Testes unitários executados com sucesso  
 
 ### ▶️ Comandos
-```bash
 python main.py     # Executar o programa
 pytest -v          # Rodar os testes
 ````
@@ -98,19 +97,18 @@ Escolha uma opção:
 
 ## 🧱 Estrutura do Projeto
 
-```bash
-/projeto_wsn/
-│
-├── main.py              # Script principal (menu e controle)
-├── sensores.py          # Simulação dos sensores
-├── armazenamento.py     # Funções para salvar e ler dados
-├── graficos.py          # Exibição de gráficos
-├── dados/leituras.csv   # Base de dados gerada
-├── tests/               # Testes automatizados
-│   ├── test_sensores.py
-│   ├── test_armazenamento.py
-│   └── test_graficos.py
-└── README.md            # Documentação do projeto
+PROJETO-WSN/
+├── dados/                       # Pasta onde o arquivo CSV de leituras será salvo
+├── tests/
+│   ├── test_sensores.py         # Testes para o módulo de geração de dados
+│   ├── test_armazenamento.py    # Testes para o módulo de armazenamento
+│   ├── test_graficos.py         # Testes para o módulo de gráficos
+│   └── test_grupo.py            # Teste de integração (fluxo completo)
+├── armazenamento.py             # Lógica para salvar dados no CSV
+├── graficos.py                  # Lógica para ler o CSV e gerar visualizações
+├── main.py                      # Ponto de entrada e orquestração do projeto
+├── sensores.py                  # Lógica para simular a geração de dados
+└── README.md                    # Este arquivo
 ```
 
 ---
@@ -137,6 +135,7 @@ tests/
 ├── test_sensores.py
 ├── test_armazenamento.py
 └── test_graficos.py
+└── test_grupo.py
 ```
 
 ### O que é testado
@@ -149,13 +148,11 @@ tests/
 
 ### Execução
 
-```bash
 pytest -v
 ```
 
 ### Dependências
 
-```bash
 pip install pytest pandas matplotlib
 ```
 
