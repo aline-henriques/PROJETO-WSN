@@ -9,35 +9,23 @@
 ## 🗓️ Semana 1 (27/10/2025) – Planejamento e Configuração
 
 ### Objetivo
-Definição da solução, divisão de tarefas, pesquisa de bibliotecas Python e configuração do ambiente de desenvolvimento.
-
-### Tema
-**Redes de Sensores (Wireless Sensor Networks - WSN)**  
-
 Desenvolvimento de uma aplicação Python que simula a coleta, o armazenamento e a visualização de dados de sensores (como temperatura e umidade) em uma rede de sensores sem fio simulada.  
 O objetivo é compreender o funcionamento básico da comunicação entre nós sensores e o processamento dos dados coletados.
-
-### Marco e Entrega
-- Documento de planejamento inicial (Tema, Escopo, Tecnologias, Divisão de Tarefas).  
-- Ambiente Python configurado e código inicial (esqueleto) pronto para a funcionalidade principal.
 
 ---
 
 ## 🧩 Semana 2 (03/11/2025) – Desenvolvimento Básico
 
 ### Objetivo
-Implementação da funcionalidade central do projeto (parte mais básica da rede) e testes unitários iniciais.
-
-### Descrição
 Durante a segunda semana, a equipe implementou a **funcionalidade principal**, criando o protótipo funcional da rede de sensores.  
 Foram desenvolvidos os módulos principais (`sensores.py`, `armazenamento.py`, `graficos.py`) e realizados os **testes automatizados** com *Pytest*.
 
 ### Marco e Entrega
-- ✅ Funcionalidade de rede principal implementada e testada  
-- ✅ Protótipo funcional rodando em linha de comando  
-- ✅ Testes unitários executados com sucesso  
+- Funcionalidade de rede principal implementada e testada  
+- Protótipo funcional rodando em linha de comando  
+- Testes unitários executados com sucesso  
 
-### ▶️ Comandos
+### Comandos para Execução
 python main.py     # Executar o programa
 pytest -v          # Rodar os testes
 
@@ -46,38 +34,16 @@ pytest -v          # Rodar os testes
 ## 🧠 Semana 3 (10/11/2025) – Refinamento e Interface
 
 ### Objetivo
-
-Adicionar funcionalidades secundárias, tratamento de erros e desenvolver uma interface simples (terminal).
-
-### Descrição
-
 Na terceira semana, o foco foi o **refinamento do sistema** e a **criação de um menu interativo**.
 O código passou a permitir que o usuário escolha ações no terminal e visualize estatísticas consolidadas das leituras.
 
-### Novas Funcionalidades
+### Novas Funcionalidades Implementadas
 
 * Menu interativo no terminal
 * Intervalo de coleta configurável pelo usuário
 * Exibição de estatísticas (média, mínima e máxima)
 * Tratamento de erros e mensagens informativas
 * Estrutura modular e aprimorada
-
-### 🖥️ Menu Principal
-
-```
-=== 🌡️ PROJETO WSN - MENU PRINCIPAL ===
-1 - Iniciar Coleta de Dados
-2 - Exibir Gráfico
-3 - Mostrar Estatísticas
-4 - Sair
-Escolha uma opção:
-```
-
-### Marco e Entrega
-
-* ✅ Projeto funcionalmente completo e utilizável
-* ✅ Interface simples implementada
-* ✅ Tratamento de exceções e validações básicas
 
 ---
 
@@ -91,23 +57,6 @@ Escolha uma opção:
 | Processamento de Dados   | **pandas**                  | Estrutura e manipula os dados armazenados em CSV.                           |
 | Visualização Gráfica     | **matplotlib.pyplot**       | Gera gráficos de linha com as medições coletadas.                           |
 | Organização              | **pathlib**, **os**         | Criação de diretórios e acesso seguro aos arquivos.                         |
-
----
-
-## 🧱 Estrutura do Projeto
-
-PROJETO-WSN/
-├── dados/                       # Pasta onde o arquivo CSV de leituras será salvo
-├── tests/
-│   ├── test_sensores.py         # Testes para o módulo de geração de dados
-│   ├── test_armazenamento.py    # Testes para o módulo de armazenamento
-│   ├── test_graficos.py         # Testes para o módulo de gráficos
-│   └── test_grupo.py            # Teste de integração (fluxo completo)
-├── armazenamento.py             # Lógica para salvar dados no CSV
-├── graficos.py                  # Lógica para ler o CSV e gerar visualizações
-├── main.py                      # Ponto de entrada e orquestração do projeto
-├── sensores.py                  # Lógica para simular a geração de dados
-└── README.md                    # Este arquivo
 
 ---
 
@@ -167,40 +116,14 @@ tests/test_sensores.py::test_gerar_dado_sensor_valores_validos PASSED
 
 ---
 
-Aqui está o trecho formatado em **Markdown**, pronto para inserir no seu `README.md`:
-
----
-
-## 9. 🧩 Resultados e Conclusão
-
-O **Projeto WSN** demonstra o funcionamento de uma **rede de sensores simulada**, integrando:
-
-* 📡 **Coleta e armazenamento de dados**
-* 📊 **Processamento e visualização gráfica**
-* 💻 **Interface interativa simples e funcional**
-
-O sistema está **100% funcional, documentado e pronto para apresentação**, representando uma integração prática entre **programação, redes de computadores e análise de dados**.
-
----
-
-## 10. 📄 Documentação Final e Apresentação
-
-### 📘 **Entrega Final**
-
-* ✅ Código totalmente funcional e documentado
-* ✅ Testes unitários e integrados executados com sucesso
-* ✅ README e manual de uso finalizados
-* ✅ Roteiro de apresentação concluído no Canva
-
 ### 🎨 **Apresentação no Canva**
 
-👉 [Clique aqui para visualizar a apresentação](https://www.canva.com/design/DAG4VvbkseQ/M_CyhvUUxop1mFO4Xciuhw/edit)
+[Clique aqui para visualizar a apresentação](https://www.canva.com/design/DAG4VvbkseQ/M_CyhvUUxop1mFO4Xciuhw/edit)
 
 ---
 
-## 📄 Licença
+## Licença
 
 Projeto acadêmico desenvolvido para fins **educacionais** na disciplina
 **Infraestrutura de Comunicação – CESAR School (2025)**.
-
-📘 Todos os direitos reservados aos autores do grupo.
+Todos os direitos reservados aos autores do grupo.
